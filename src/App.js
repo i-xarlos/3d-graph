@@ -2,9 +2,8 @@ import "./App.css";
 import { ForceGraph3D } from "react-force-graph";
 //import myData from "./data.json";
 import * as THREE from "three";
-//import { } from "three/examples/js/renderers/CSS2DRenderer";
-//import { CSS2DObject } from "three/examples/js/renderers/CSS2DRenderer";
-//import { CSS2DRenderer, CSS2DObject } from "three-css2drender";
+import { CSS2DRenderer, CSS2DObject } from "three-css2drender";
+
 import cat from "./imgs/cat.jpg";
 import dog from "./imgs/dog.jpg";
 import eagle from "./imgs/eagle.jpg";
@@ -31,8 +30,7 @@ function App() {
   ];
 
   // Random connected graph
-  const ele =
-    "<div class='node-label'><h1>Author: PPF</h1><ul><li>data: 1</li><li>data: 2</li></ul></div>";
+  const ele = `<div class='node-label'><h1>Author: PPF</h1><img width="100" src="${cat}"><ul><li>data: 1</li><li>data: 2</li></ul></div>`;
 
   const gData = {
     nodes: imgs.map((img, id) => ({ id, color: "#00ff00", name: ele, img })),
@@ -43,24 +41,26 @@ function App() {
         target: Math.round(Math.random() * (id - 1)),
       })),
   };
-  //const extraRenderers = [new CSS2DRenderer()];
+  const extraRenderers = [new CSS2DRenderer()];
   return (
     <div className="App">
       <ForceGraph3D
+        extraRenderers={extraRenderers}
         graphData={gData}
         nodeThreeObject={({ img, id, color, name }) => {
-          const imgTexture = new THREE.TextureLoader().load(`${img}`);
-          const material = new THREE.SpriteMaterial({ map: imgTexture });
-          const sprite = new THREE.Sprite(material);
+          //const imgTexture = new THREE.TextureLoader().load(`${img}`);
+          //const material = new THREE.SpriteMaterial({ map: imgTexture });
+          //const sprite = new THREE.Sprite(material);
 
-          sprite.scale.set(12, 12);
-          return sprite;
+          //sprite.scale.set(12, 12);
+          //return sprite;
 
-          //const nodeEl = document.createElement("div");
-          //nodeEl.textContent = name;
-          //nodeEl.style.color = color;
-          //nodeEl.className = "node-label";
-          //return new CSS2DObject(nodeEl);
+          const nodeEl = document.createElement("div");
+          nodeEl.innerHTML = name;
+          nodeEl.style.color = color;
+          nodeEl.className = "node-label";
+          console.log("img", img);
+          return new CSS2DObject(nodeEl);
         }}
         //nodeThreeObjectExtend={true}
       />
