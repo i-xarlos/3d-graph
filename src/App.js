@@ -46,6 +46,7 @@ function App() {
     <div className="App">
       <ForceGraph3D
         extraRenderers={extraRenderers}
+        enablePointerInteraction
         graphData={gData}
         nodeThreeObject={({ img, id, color, name }) => {
           //const imgTexture = new THREE.TextureLoader().load(`${img}`);
@@ -59,7 +60,7 @@ function App() {
           nodeEl.innerHTML = name;
           nodeEl.style.color = color;
           nodeEl.className = "node-label";
-          console.log("img", img);
+          //console.log("img", img);
           return new CSS2DObject(nodeEl);
         }}
         //nodeThreeObjectExtend={true}
