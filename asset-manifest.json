@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/3d-graph/static/css/main.03587535.chunk.css",
-    "main.js": "/3d-graph/static/js/main.4e91a390.chunk.js",
-    "main.js.map": "/3d-graph/static/js/main.4e91a390.chunk.js.map",
+    "main.js": "/3d-graph/static/js/main.fd7e3127.chunk.js",
+    "main.js.map": "/3d-graph/static/js/main.fd7e3127.chunk.js.map",
     "runtime-main.js": "/3d-graph/static/js/runtime-main.b9bbfe1e.js",
     "runtime-main.js.map": "/3d-graph/static/js/runtime-main.b9bbfe1e.js.map",
     "static/js/2.180b252e.chunk.js": "/3d-graph/static/js/2.180b252e.chunk.js",
@@ -12,21 +12,21 @@
     "index.html": "/3d-graph/index.html",
     "static/css/main.03587535.chunk.css.map": "/3d-graph/static/css/main.03587535.chunk.css.map",
     "static/js/2.180b252e.chunk.js.LICENSE.txt": "/3d-graph/static/js/2.180b252e.chunk.js.LICENSE.txt",
-    "static/media/cat.1cec6b41.jpg": "/3d-graph/static/media/cat.1cec6b41.jpg",
-    "static/media/dog.faa9a8ea.jpg": "/3d-graph/static/media/dog.faa9a8ea.jpg",
-    "static/media/eagle.1a84eace.jpg": "/3d-graph/static/media/eagle.1a84eace.jpg",
-    "static/media/elephant.e8f7f3a0.jpg": "/3d-graph/static/media/elephant.e8f7f3a0.jpg",
-    "static/media/grasshopper.b79aa4a9.jpg": "/3d-graph/static/media/grasshopper.b79aa4a9.jpg",
-    "static/media/octopus.469d1be6.jpg": "/3d-graph/static/media/octopus.469d1be6.jpg",
-    "static/media/owl.1226bc80.jpg": "/3d-graph/static/media/owl.1226bc80.jpg",
-    "static/media/panda.9c999762.jpg": "/3d-graph/static/media/panda.9c999762.jpg",
-    "static/media/tiger.aa0b28f1.jpg": "/3d-graph/static/media/tiger.aa0b28f1.jpg",
-    "static/media/whale.74960436.jpg": "/3d-graph/static/media/whale.74960436.jpg"
+    "static/media/cat.7bb6a3c2.jpg": "/3d-graph/static/media/cat.7bb6a3c2.jpg",
+    "static/media/dog.859b6c01.jpg": "/3d-graph/static/media/dog.859b6c01.jpg",
+    "static/media/eagle.01fdaf53.jpg": "/3d-graph/static/media/eagle.01fdaf53.jpg",
+    "static/media/elephant.ba20c3cc.jpg": "/3d-graph/static/media/elephant.ba20c3cc.jpg",
+    "static/media/grasshopper.900a54fb.jpg": "/3d-graph/static/media/grasshopper.900a54fb.jpg",
+    "static/media/octopus.a96e2ea6.jpg": "/3d-graph/static/media/octopus.a96e2ea6.jpg",
+    "static/media/owl.db3eae90.jpg": "/3d-graph/static/media/owl.db3eae90.jpg",
+    "static/media/panda.c71471a7.jpg": "/3d-graph/static/media/panda.c71471a7.jpg",
+    "static/media/tiger.9f7fe6b4.jpg": "/3d-graph/static/media/tiger.9f7fe6b4.jpg",
+    "static/media/whale.e5ee6060.jpg": "/3d-graph/static/media/whale.e5ee6060.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.b9bbfe1e.js",
     "static/js/2.180b252e.chunk.js",
     "static/css/main.03587535.chunk.css",
-    "static/js/main.4e91a390.chunk.js"
+    "static/js/main.fd7e3127.chunk.js"
   ]
 }
