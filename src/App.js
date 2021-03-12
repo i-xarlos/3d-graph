@@ -4,26 +4,35 @@ import { ForceGraph3D } from "react-force-graph";
 import * as THREE from "three";
 //import { } from "three/examples/js/renderers/CSS2DRenderer";
 //import { CSS2DObject } from "three/examples/js/renderers/CSS2DRenderer";
-import { CSS2DRenderer, CSS2DObject } from "three-css2drender";
+//import { CSS2DRenderer, CSS2DObject } from "three-css2drender";
+import cat from "./imgs/cat.jpg";
+import dog from "./imgs/dog.jpg";
+import eagle from "./imgs/eagle.jpg";
+import elephant from "./imgs/elephant.jpg";
+import grasshopper from "./imgs/grasshopper.jpg";
+import octopus from "./imgs/octopus.jpg";
+import owl from "./imgs/owl.jpg";
+import panda from "./imgs/panda.jpg";
+import tiger from "./imgs/tiger.jpg";
+import whale from "./imgs/whale.jpg";
 
 function App() {
   const imgs = [
-    "cat.jpg",
-    "dog.jpg",
-    "eagle.jpg",
-    "elephant.jpg",
-    "grasshopper.jpg",
-    "octopus.jpg",
-    "owl.jpg",
-    "panda.jpg",
-    "squirrel.jpg",
-    "tiger.jpg",
-    "whale.jpg",
+    cat,
+    dog,
+    eagle,
+    elephant,
+    grasshopper,
+    octopus,
+    owl,
+    panda,
+    tiger,
+    whale,
   ];
 
   // Random connected graph
   const ele =
-    "<div class='node-label'><h1>Author: XXX</h1><ul><li>data: 1</li><li>data: 2</li></ul></div>";
+    "<div class='node-label'><h1>Author: PPF</h1><ul><li>data: 1</li><li>data: 2</li></ul></div>";
 
   const gData = {
     nodes: imgs.map((img, id) => ({ id, color: "#00ff00", name: ele, img })),
@@ -34,20 +43,15 @@ function App() {
         target: Math.round(Math.random() * (id - 1)),
       })),
   };
-  const extraRenderers = [new CSS2DRenderer()];
+  //const extraRenderers = [new CSS2DRenderer()];
   return (
     <div className="App">
       <ForceGraph3D
         graphData={gData}
         nodeThreeObject={({ img, id, color, name }) => {
-          const imgTexture = new THREE.TextureLoader().load(`./imgs/${img}`);
+          const imgTexture = new THREE.TextureLoader().load(`${img}`);
           const material = new THREE.SpriteMaterial({ map: imgTexture });
           const sprite = new THREE.Sprite(material);
-
-          //var geometry = new THREE.BoxGeometry(1, 1, 1);
-          //var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-          //var cube = new THREE.Mesh(geometry, material);
-          //sprite.add(cube);
 
           sprite.scale.set(12, 12);
           return sprite;

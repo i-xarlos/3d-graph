@@ -49,6 +49,7 @@
   margin: 0;
   display: block;
   text-align: left;
+  font-size: 0.9rem;
 }
 
 @keyframes App-logo-spin {
