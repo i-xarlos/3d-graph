@@ -51,6 +51,11 @@
   text-align: left;
   font-size: 0.9rem;
 }
+@media screen and (max-width: 550px) {
+  .node-label {
+    display: none;
+  }
+}
 
 @keyframes App-logo-spin {
   from {

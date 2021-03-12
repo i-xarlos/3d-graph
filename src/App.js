@@ -2,8 +2,6 @@ import "./App.css";
 import { ForceGraph3D } from "react-force-graph";
 //import myData from "./data.json";
 import * as THREE from "three";
-//import { } from "three/examples/js/renderers/CSS2DRenderer";
-//import { CSS2DObject } from "three/examples/js/renderers/CSS2DRenderer";
 //import { CSS2DRenderer, CSS2DObject } from "three-css2drender";
 import cat from "./imgs/cat.jpg";
 import dog from "./imgs/dog.jpg";
@@ -15,6 +13,7 @@ import owl from "./imgs/owl.jpg";
 import panda from "./imgs/panda.jpg";
 import tiger from "./imgs/tiger.jpg";
 import whale from "./imgs/whale.jpg";
+import { useCallback, useEffect, useRef } from "react";
 
 function App() {
   const imgs = [
@@ -30,12 +29,25 @@ function App() {
     whale,
   ];
 
+  const fgRef = useRef(null);
+
+  useEffect(() => {
+    //fgRef.current.linkColor = "#000000";
+    const d3 = fgRef.current;
+    console.log(fgRef.current);
+  }, [fgRef]);
+
   // Random connected graph
-  const ele =
-    "<div class='node-label'><h1>Author: PPF</h1><ul><li>data: 1</li><li>data: 2</li></ul></div>";
+  const ele = (id) =>
+    `<div class='node-label'><h1>Author: PPF</h1><img width="200" src="${imgs[id]}"><ul><li>data: 1</li><li>data: 2</li></ul></div>`;
 
   const gData = {
-    nodes: imgs.map((img, id) => ({ id, color: "#00ff00", name: ele, img })),
+    nodes: imgs.map((img, id) => ({
+      id,
+      color: "#00ffff",
+      name: ele(id),
+      img,
+    })),
     links: [...Array(imgs.length).keys()]
       .filter((id) => id)
       .map((id) => ({
@@ -43,17 +55,38 @@ function App() {
         target: Math.round(Math.random() * (id - 1)),
       })),
   };
-  //const extraRenderers = [new CSS2DRenderer()];
+
+  const handleClick = useCallback(
+    (node) => {
+      // Aim at node from outside it
+      const distance = 50;
+      const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
+
+      fgRef.current.cameraPosition(
+        { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+        node, // lookAt ({ x, y, z })
+        3000 // ms transition duration
+      );
+    },
+    [fgRef]
+  );
+
   return (
     <div className="App">
       <ForceGraph3D
+        ref={fgRef}
         graphData={gData}
+        onNodeClick={handleClick}
+        backgroundColor="white"
+        linkOpacity={0.5}
+        linkAutoColorBy
+        //onEngineStop={() => fgRef.current.zoomToFit(100)}
         nodeThreeObject={({ img, id, color, name }) => {
           const imgTexture = new THREE.TextureLoader().load(`${img}`);
           const material = new THREE.SpriteMaterial({ map: imgTexture });
           const sprite = new THREE.Sprite(material);
 
-          sprite.scale.set(12, 12);
+          sprite.scale.set(30, 30);
           return sprite;
 
           //const nodeEl = document.createElement("div");
