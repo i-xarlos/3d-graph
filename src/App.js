@@ -13,6 +13,8 @@ import owl from "./imgs/owl.jpg";
 import panda from "./imgs/panda.jpg";
 import tiger from "./imgs/tiger.jpg";
 import whale from "./imgs/whale.jpg";
+import info from "./imgs/info.png";
+
 import { useCallback, useEffect, useRef } from "react";
 
 function App() {
@@ -32,9 +34,8 @@ function App() {
   const fgRef = useRef(null);
 
   useEffect(() => {
-    //fgRef.current.linkColor = "#000000";
     const d3 = fgRef.current;
-    console.log(fgRef.current);
+    console.log(d3);
   }, [fgRef]);
 
   // Random connected graph
@@ -82,29 +83,32 @@ function App() {
         linkAutoColorBy
         //onEngineStop={() => fgRef.current.zoomToFit(100)}
         nodeThreeObject={({ img, id, color, name }) => {
+          const scene = new THREE.Scene();
+          const group = new THREE.Group();
+
           const imgTexture = new THREE.TextureLoader().load(`${img}`);
           const material = new THREE.SpriteMaterial({ map: imgTexture });
           const sprite = new THREE.Sprite(material);
 
-          sprite.scale.set(30, 30);
-          return sprite;
+          const sprite1 = new THREE.Sprite(
+            //new THREE.CircleGeometry(100, 100)
+            new THREE.SpriteMaterial({ color: "#69f" })
+          );
+          //sprite1.position.set(20, 0, 0);
+          sprite1.center.set(7, -2);
 
-          //const nodeEl = document.createElement("div");
-          //nodeEl.textContent = name;
-          //nodeEl.style.color = color;
-          //nodeEl.className = "node-label";
-          //return new CSS2DObject(nodeEl);
+          sprite1.scale.set(2, 5, 1);
+
+          scene.add(group);
+
+          group.add(sprite1);
+          group.add(sprite);
+
+          sprite.scale.set(30, 30);
+          return scene;
         }}
         //nodeThreeObjectExtend={true}
       />
-      {
-        //<ForceGraph3D
-        //width="100%"
-        //height="600"
-        //backgroundColor="#333"
-        //graphData={myData}
-        ///>
-      }
     </div>
   );
 }
