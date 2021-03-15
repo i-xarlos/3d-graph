@@ -90,14 +90,13 @@ function App() {
           const material = new THREE.SpriteMaterial({ map: imgTexture });
           const sprite = new THREE.Sprite(material);
 
-          const sprite1 = new THREE.Sprite(
-            //new THREE.CircleGeometry(100, 100)
-            new THREE.SpriteMaterial({ color: "#69f" })
-          );
+          const imgTexture1 = new THREE.TextureLoader().load(`${info}`);
+          const material1 = new THREE.SpriteMaterial({ map: imgTexture1 });
+          const sprite1 = new THREE.Sprite(material1);
           //sprite1.position.set(20, 0, 0);
-          sprite1.center.set(7, -2);
+          sprite1.center.set(-5, 6);
 
-          sprite1.scale.set(2, 5, 1);
+          sprite1.scale.set(2, 2);
 
           scene.add(group);
 
