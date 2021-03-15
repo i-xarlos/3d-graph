@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/3d-graph/static/css/main.03587535.chunk.css",
-    "main.js": "/3d-graph/static/js/main.e0d2e9ff.chunk.js",
-    "main.js.map": "/3d-graph/static/js/main.e0d2e9ff.chunk.js.map",
+    "main.js": "/3d-graph/static/js/main.2fb37306.chunk.js",
+    "main.js.map": "/3d-graph/static/js/main.2fb37306.chunk.js.map",
     "runtime-main.js": "/3d-graph/static/js/runtime-main.b9bbfe1e.js",
     "runtime-main.js.map": "/3d-graph/static/js/runtime-main.b9bbfe1e.js.map",
     "static/js/2.180b252e.chunk.js": "/3d-graph/static/js/2.180b252e.chunk.js",
@@ -17,6 +17,7 @@
     "static/media/eagle.01fdaf53.jpg": "/3d-graph/static/media/eagle.01fdaf53.jpg",
     "static/media/elephant.ba20c3cc.jpg": "/3d-graph/static/media/elephant.ba20c3cc.jpg",
     "static/media/grasshopper.900a54fb.jpg": "/3d-graph/static/media/grasshopper.900a54fb.jpg",
+    "static/media/info.6567d54f.png": "/3d-graph/static/media/info.6567d54f.png",
     "static/media/octopus.a96e2ea6.jpg": "/3d-graph/static/media/octopus.a96e2ea6.jpg",
     "static/media/owl.db3eae90.jpg": "/3d-graph/static/media/owl.db3eae90.jpg",
     "static/media/panda.c71471a7.jpg": "/3d-graph/static/media/panda.c71471a7.jpg",
@@ -27,6 +28,6 @@
     "static/js/runtime-main.b9bbfe1e.js",
     "static/js/2.180b252e.chunk.js",
     "static/css/main.03587535.chunk.css",
-    "static/js/main.e0d2e9ff.chunk.js"
+    "static/js/main.2fb37306.chunk.js"
   ]
 }
